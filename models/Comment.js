@@ -10,18 +10,14 @@ const schema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    product: {
+    article: {
         type: mongoose.Types.ObjectId,
         required:true,
-        ref: "Product"
+        ref: "Article"
     },
     body: {
         type: String,
         required: true
-    },
-    score: {
-        type: Number,
-        default: 5
     },
     parentComment: {
         type: mongoose.Types.ObjectId,
@@ -32,7 +28,7 @@ const schema = new mongoose.Schema({
         type: Date,
         default: () => Date.now()
     },
-    isAccept:{
+    isAccepted:{
         type:Boolean,
         default:false
     },

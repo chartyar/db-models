@@ -25,12 +25,28 @@ const schema = mongoose.Schema({
         type: Number,
         required: true
     },
+    wallet:{
+        type: Number,
+        required: true
+    },
+    subUsers:{
+        type: [{
+            type: mongoose.Types.ObjectId,
+            ref: "User"
+        }]
+    },
+    inviter:{
+        type: mongoose.Types.ObjectId,
+        default: null
+    },
     role:{
         type: String,
         default:"USER"
     }
+},{
+    timestamp:true
 })
 
-const model = mongoose?.models?.User || mongoose.model('User',schema)
+const model = mongoose.models.User || mongoose.model('User',schema)
 
 export default model;

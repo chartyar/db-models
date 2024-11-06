@@ -21,17 +21,24 @@ const schema = new mongoose.Schema({
         type:String,
         required:true
     },
-    score:{
-        type:Number,
-        default:5
-    },
     body:{
+        type:String,
+        required:true
+    },
+    seo:{
         type:String,
         required:true
     }
 },{
     timestamps:true
 })
+
+schema.virtual("comments",{
+    ref:"Comment",
+    localField:"_id",
+    foreignField:"article"
+})
+
 
 const model = mongoose.models.Article || mongoose.model("Article",schema)
 export default model;
