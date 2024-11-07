@@ -10,12 +10,13 @@ const schema = new mongoose.Schema(
             type:String,
             request: true
         },
+        // uses iso8601 time format
         expTime:{
-            type:Number,
+            type:String,
             request: true
         },
         // how many times user try
-        times:{
+        tries:{
             type:Number,
             default: 0
         },

@@ -9,8 +9,8 @@ const schema = new mongoose.Schema({
         type:Number,
         required: true
     },
-    expiredTime:{
-        type:Number,
+    duration:{
+        type:String,
         required:true
     },
     sessionNum:{
@@ -19,6 +19,14 @@ const schema = new mongoose.Schema({
     },
     permissions:{
         type:[String],
+        required:true
+    },
+    roles:{
+        type:[String],
+        required:true
+    },
+    enabled:{
+        type:Boolean,
         required:true
     }
 })

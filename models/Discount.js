@@ -11,6 +11,9 @@ const schema = new mongoose.Schema(
             type: Number,
             required: true,
         },
+        maxPrice:{
+            type: Number
+        },
         maxUse: {
             type: Number,
             required: true,
@@ -24,6 +27,9 @@ const schema = new mongoose.Schema(
                 type: mongoose.Types.ObjectId,
                 ref:"User"
             }]
+        },
+        enable:{
+            type:Boolean
         }
     },
     {

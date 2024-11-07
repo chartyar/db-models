@@ -39,9 +39,20 @@ const schema = mongoose.Schema({
         type: mongoose.Types.ObjectId,
         default: null
     },
-    role:{
-        type: String,
-        default:"USER"
+    roles:{
+        type: [String],
+        default:["USER"]
+    },
+    permissions:{
+        type: [String]
+    },
+    plan:{
+        type: mongoose.Schema.Types.ObjectId,
+        default: null
+    },
+    planStart:{
+        type:Date,
+        default:null
     }
 },{
     timestamp:true
